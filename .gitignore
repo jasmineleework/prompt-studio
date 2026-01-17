@@ -42,7 +42,8 @@ next-env.d.ts
 # IDE
 .cursor/
 .idea/
-.vscode/
+.vscode/*
+!.vscode/settings.json
 
 # local prompt backups
 /prompts/
