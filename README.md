@@ -1,6 +1,9 @@
-# Prompt Workbench
+# Prompt studio
 
 A professional prompt engineering workbench for managing and versioning your prompts with real-time diff comparison and local file backup.
+<img width="3024" height="1724" alt="image" src="https://github.com/user-attachments/assets/6ec624a9-2b7e-47c5-ab4b-29ceaf250d51" />
+<img width="3024" height="1724" alt="image" src="https://github.com/user-attachments/assets/d6932498-3a2f-4237-8a80-d7453182ea26" />
+
 
 ## ✨ Features
 
