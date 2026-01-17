@@ -1,0 +1,24 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🧪 Running E2E tests before push..."
+echo "This may take a few minutes..."
+
+# Run E2E tests
+npm run test:e2e
+
+# Check exit code
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ E2E tests failed. Push aborted."
+  echo "Please fix the failing tests and try again."
+  echo ""
+  echo "Tips:"
+  echo "  - Run 'npm run test:e2e:ui' to debug tests interactively"
+  echo "  - Run 'npm run test:e2e:report' to view the test report"
+  exit 1
+fi
+
+echo ""
+echo "✅ All E2E tests passed!"
+echo ""

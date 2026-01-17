@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode - minimal changes for consistency */
+    --background: 0 0% 100%;
+    --background-elevated: 0 0% 99%;
+    --background-hover: 0 0% 96%;
+    --surface: 0 0% 99%;
+    --surface-raised: 0 0% 100%;
+
+    --foreground: 220 13% 18%;
+    --foreground-muted: 220 9% 46%;
+    --foreground-subtle: 220 9% 62%;
+
+    --primary: 212 92% 45%;
+    --primary-hover: 212 92% 40%;
+    --primary-light: 212 92% 95%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Syntax-inspired accents */
+    --accent-blue: 212 92% 45%;      /* Variables/functions */
+    --accent-purple: 270 70% 60%;    /* Keywords */
+    --accent-amber: 36 100% 50%;     /* Strings */
+    --accent-green: 142 70% 45%;     /* Success/additions */
+    --accent-red: 0 70% 50%;         /* Errors/deletions */
+
+    --border: 220 13% 85%;
+    --border-strong: 220 13% 75%;
+    --border-subtle: 220 13% 91%;
+    --border-hover: 212 92% 70%;
+
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 2px 8px 0 rgb(0 0 0 / 0.08), 0 1px 2px 0 rgb(0 0 0 / 0.04);
+    --shadow-lg: 0 8px 16px 0 rgb(0 0 0 / 0.12), 0 2px 4px 0 rgb(0 0 0 / 0.06);
+    --shadow-xl: 0 20px 32px 0 rgb(0 0 0 / 0.16), 0 4px 8px 0 rgb(0 0 0 / 0.08);
+
+    /* Keep existing for compatibility */
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+    --secondary: 220 13% 95%;
+    --secondary-foreground: 220 13% 18%;
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 220 13% 95%;
+    --accent-foreground: 220 13% 18%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --input: 220 13% 85%;
+    --ring: 212 92% 45%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Developer-focused Dark Mode - VS Code / GitHub Dark inspired */
+    --background: 220 13% 9%;           /* #16181d - Deep editor background */
+    --background-elevated: 220 13% 12%; /* #1d2025 - Elevated panels */
+    --background-hover: 220 13% 16%;    /* #25272e - Hover state */
+    --surface: 220 13% 12%;             /* #1d2025 - Surface panels */
+    --surface-raised: 220 13% 15%;      /* #22242b - Raised surfaces */
+
+    --foreground: 220 13% 91%;          /* #e4e5e8 - High contrast text */
+    --foreground-muted: 220 9% 64%;     /* #9a9da5 - Muted text */
+    --foreground-subtle: 220 9% 46%;    /* #6d7178 - Subtle text */
+
+    --primary: 212 92% 55%;             /* #2b8ff7 - Bright blue (like VSCode's blue) */
+    --primary-hover: 212 92% 60%;       /* Lighter on hover */
+    --primary-light: 212 92% 15%;       /* #0a2942 - Subtle blue background */
+    --primary-foreground: 220 13% 9%;   /* Dark text on primary */
+
+    /* Syntax-inspired accents for dark mode */
+    --accent-blue: 212 92% 55%;         /* #2b8ff7 - Variables/functions */
+    --accent-purple: 270 70% 65%;       /* #a78bfa - Keywords/types */
+    --accent-amber: 36 100% 55%;        /* #ffa500 - Strings/constants */
+    --accent-green: 142 70% 50%;        /* #22c55e - Success/additions */
+    --accent-red: 0 70% 55%;            /* #e74c3c - Errors/deletions */
+
+    --border: 220 13% 20%;              /* #2d3038 - Subtle borders */
+    --border-strong: 220 13% 28%;       /* #3d4149 - Strong borders */
+    --border-subtle: 220 13% 15%;       /* #22242b - Very subtle */
+    --border-hover: 212 92% 35%;        /* Blue border on hover */
+
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+    --shadow-md: 0 2px 8px 0 rgb(0 0 0 / 0.5), 0 1px 2px 0 rgb(0 0 0 / 0.4);
+    --shadow-lg: 0 8px 16px 0 rgb(0 0 0 / 0.6), 0 2px 4px 0 rgb(0 0 0 / 0.4);
+    --shadow-xl: 0 20px 32px 0 rgb(0 0 0 / 0.7), 0 4px 8px 0 rgb(0 0 0 / 0.5);
+
+    /* Keep existing for compatibility */
+    --card: 220 13% 12%;
+    --card-foreground: 220 13% 91%;
+    --popover: 220 13% 12%;
+    --popover-foreground: 220 13% 91%;
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 220 13% 91%;
+    --muted: 220 13% 15%;
+    --muted-foreground: 220 9% 64%;
+    --accent: 220 13% 15%;
+    --accent-foreground: 220 13% 91%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 220 13% 91%;
+    --input: 220 13% 20%;
+    --ring: 212 92% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
