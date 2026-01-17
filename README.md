@@ -103,6 +103,37 @@ Double-click `start.command` to:
 └── prompts/              # Local prompt backups (auto-generated)
 ```
 
+## 🌿 Branch Structure
+
+- `main` - 生产稳定版本
+- `DEV` - 开发分支，包含最新功能和实验性更改
+
+### Development Workflow
+
+```bash
+# 切换到开发分支
+git checkout DEV
+
+# 拉取最新代码
+git pull origin DEV
+
+# 进行开发工作
+# ... 编写代码 ...
+
+# 提交更改
+git add .
+git commit -m "feat: 新功能描述"
+git push origin DEV
+```
+
+### 便捷命令（Git 别名）
+
+```bash
+git de    # 切换到 DEV 分支
+git dp    # 拉取 DEV 分支最新代码
+git du    # 推送 DEV 分支代码
+```
+
 ## 🔧 Development
 
 ```bash
